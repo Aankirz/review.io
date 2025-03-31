@@ -1,5 +1,11 @@
 import { ProductPageClient } from "@/components/Product/ProductPage";
 
-export default function ProductPage({ params }: { params: { id: string } }) {
+interface ProductPageProps {
+  params: {
+    id: string;
+  };
+}
+
+export default async function ProductPage({ params }: ProductPageProps) {
   return <ProductPageClient id={params.id} />;
 } 
