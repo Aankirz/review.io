@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { products, reviews, users } from "@/utils/mockData";
 import { ReviewCard } from "@/components/Review/ReviewCard";
-import { ArrowDown, X } from "lucide-react";
 
 export default function Home() {
   const [showGuide, setShowGuide] = useState(false);
@@ -160,7 +159,7 @@ export default function Home() {
                   Why Choose review.io?
                 </h2>
                 <p className="text-muted-foreground text-lg max-w-[600px]">
-                  We're on a mission to bring transparency to product reviews. No fake reviews, no paid endorsements - just honest opinions from real users.
+                  We&apos;re on a mission to bring transparency to product reviews. No fake reviews, no paid endorsements - just honest opinions from real users.
                 </p>
               </div>
               <div className="grid gap-6 md:grid-cols-2">

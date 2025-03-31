@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Star, Upload } from "lucide-react";
 
 interface ReviewFormProps {
-  productId: string;
+  productId?: string;
   onSubmit: (review: {
     title: string;
     content: string;
@@ -18,7 +18,7 @@ interface ReviewFormProps {
   onCancel?: () => void;
 }
 
-export function ReviewForm({ productId, onSubmit, onCancel }: ReviewFormProps) {
+export function ReviewForm({ onSubmit, onCancel }: ReviewFormProps) {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [rating, setRating] = useState(0);

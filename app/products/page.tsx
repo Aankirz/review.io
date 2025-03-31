@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { ReviewCard } from "@/components/Review/ReviewCard";
 import { CommentSection } from "@/components/Comment/CommentSection";
 import { Card } from "@/components/ui/card";
-import { Search, Filter, TrendingUp, Zap, Clock, Calendar, SortAsc, Star } from "lucide-react";
+import { Search, Filter, TrendingUp, Zap, Clock, Star } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 
 export default function ExploreReviewsPage() {

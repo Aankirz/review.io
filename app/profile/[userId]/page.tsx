@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { Container } from "@/components/Layout/Container";
 import { reviews, users, products, comments } from "@/utils/mockData";
 import { notFound } from "next/navigation";
@@ -12,8 +11,6 @@ import { Card } from "@/components/ui/card";
 import { Cake, Bookmark, FileText, MessageSquare, Link as LinkIcon, Calendar, Mail, Settings, Shield, Trophy } from "lucide-react";
 
 export default function ProfilePage({ params }: { params: { userId: string } }) {
-  const [activeTab, setActiveTab] = useState("posts");
-  
   const user = users.find((u) => u.id === params.userId);
   
   if (!user) {
@@ -152,7 +149,7 @@ export default function ProfilePage({ params }: { params: { userId: string } }) 
                     <div className="flex flex-col items-center gap-4">
                       <FileText className="h-12 w-12 text-muted" />
                       <h3 className="text-xl font-semibold">No reviews yet</h3>
-                      <p className="text-muted-foreground">This user hasn't posted any reviews yet.</p>
+                      <p className="text-muted-foreground">This user hasn&apos;t posted any reviews yet.</p>
                       <Button>
                         <Link href="/products">Browse reviews</Link>
                       </Button>
@@ -185,7 +182,7 @@ export default function ProfilePage({ params }: { params: { userId: string } }) 
                     <div className="flex flex-col items-center gap-4">
                       <MessageSquare className="h-12 w-12 text-muted" />
                       <h3 className="text-xl font-semibold">No comments yet</h3>
-                      <p className="text-muted-foreground">This user hasn't made any comments yet.</p>
+                      <p className="text-muted-foreground">This user hasn&apos;t made any comments yet.</p>
                     </div>
                   </Card>
                 ) : (
