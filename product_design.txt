@@ -1,0 +1,145 @@
+**cursor rules.txt**
+
+Below are guiding principles and rules for building a minimalist, actionable, and highly functional MVP of “review.io” using Next.js. The goal is to allow users to discover and post reviews, upvote/downvote reviews, comment, and browse—a simple yet powerful way to bring genuine, reliable opinions to the forefront.
+
+---
+
+## 1. General Guidelines
+1. **Simplicity First**: Favor straightforward, minimal, and clean design. Make primary actions (posting, commenting, voting) immediately visible and intuitive.
+2. **Mobile-Responsive**: Ensure the layout adapts seamlessly to mobile. Keep images, buttons, and text well-scaled.
+3. **Performance**: Prioritize quick page loads by minimizing heavy assets. Always aim to keep the Time To Interactive (TTI) low.
+4. **Accessibility**: Use semantic HTML. Provide alt attributes for images, label form fields, maintain proper text contrast.
+5. **Scalability**: Organize components in a modular way. Use standard Next.js best practices for file structure and routing.
+
+---
+
+## 2. Directory Structure
+Adopt a structure that keeps features isolated and easy to manage:
+
+```
+/pages
+  |-- index.tsx  // Landing page
+  |-- product/[id].tsx  // Product detail & review section
+  |-- profile/[userId].tsx  // User profile
+  |-- api/...  // API routes for reviews, comments, upvotes/downvotes, etc.
+
+/components
+  |-- Layout/
+  |-- Review/
+  |-- Comment/
+  |-- Navigation/
+  |-- ...
+  
+/styles
+  |-- globals.css
+  |-- ...
+  
+/utils
+  |-- mockData.ts
+  |-- helpers.ts
+  |-- ...
+```
+
+**Rules**:
+1. **Keep pages Lean**: Put logic into components or helper functions, leaving pages as thin as possible.
+2. **Reusable Components**: Make components for forms, buttons, cards, etc., to maintain a uniform look and feel.
+3. **Simple Global Styles**: Use a minimal global stylesheet to define the look of headings, paragraphs, and primary UI elements.
+
+---
+
+## 3. Landing Page (Minimal + Actionable)
+1. **Clean Hero Section**: 
+   - One-liner about the platform: “Real Reviews from Real People.”
+   - A prominent “Get Started” or “Explore Reviews” call to action button.
+2. **Quick Access**: 
+   - Link or button to immediately view trending/highly-rated products or top reviews.
+3. **No Clutter**:
+   - Avoid large banners or long text. Emphasize the unique selling point: genuine reviews.
+
+---
+
+## 4. Posting & Reviewing Functionality
+1. **Post Form**:
+   - A simple form to add a new product or to write a review for an existing product.
+   - Capture necessary fields only: Title, short description, rating (1–5), review text.
+2. **Upvote/Downvote**:
+   - Prominently display upvote/downvote icons or buttons near each review.
+   - Show real-time vote counts.
+3. **Comments**:
+   - Each review page or product detail page includes a comment section.
+   - Keep input fields minimal (text area only).
+   - After submission, show the new comment in a threaded list.
+
+---
+
+## 5. User Profiles
+1. **Profile Page**:
+   - Displays user’s name, bio (optional), and a list of the user’s reviews.
+   - Option to edit basic user information.
+2. **User Reputation/Points** (Optional for MVP):
+   - Tied to upvotes, downvotes, contributions.
+   - Keep it simple: a single point count that increments for each upvote on their reviews or comments.
+
+---
+
+## 6. Navigation
+1. **Header**:
+   - Logo or text-based site name: “review.io”.
+   - “Home” link and “Browse Reviews” link.
+   - “Sign In / Sign Up” or user profile icon if already logged in.
+2. **Footer**:
+   - Contact info or minimal social links (optional in MVP).
+3. **Breadcrumbs** (Optional in MVP):
+   - On review pages, show a simple breadcrumb: “Home > ProductName > Review”.
+
+---
+
+## 7. Data & Mock Data Approach
+1. **Mock Database**:
+   - Use static JSON or a local array of objects for products, reviews, and users in `/utils/mockData.ts`.
+2. **API Routes**:
+   - Add Next.js API routes (e.g. `/api/reviews`, `/api/comments`) to simulate basic CRUD operations with the mock data.
+3. **State Management**:
+   - Handle small amounts of data with `useState` or `useReducer`.
+   - For multiple slices of data or complex interactions, consider a global store (e.g. Redux or a simple context with hooks).
+
+---
+
+## 8. Security & Validation (MVP-Level)
+1. **Client-Side Checks**:
+   - Validate form inputs before submitting (e.g. rating range, review length).
+2. **Authentication**:
+   - Simulate user sign-in using NextAuth or a mock auth strategy. Keep it minimal; store session data in cookies or local storage if needed for MVP.
+3. **Basic Rate Limiting** (Optional):
+   - Prevent spamming with minimal server-side checks in API routes.
+
+---
+
+## 9. Aesthetics
+1. **Typography**:
+   - Use a single font (system default or a basic Google Font). Keep font sizes consistent: 14–16px for body text, 18–24px for headings.
+2. **Whitespace**:
+   - Generous padding. Always give the UI enough space to breathe. Avoid cramped layouts.
+3. **Color Palette**:
+   - Stick to neutrals: white, black, greys. Use one accent color for calls to action (e.g. buttons or important links).
+
+---
+
+## 10. Extended Feature Ideas (for future releases, but keep in mind during MVP)
+1. **Search & Filtering**:
+   - Allow searching by product name, category, or rating.
+2. **Sort Reviews**:
+   - By “most helpful,” “latest,” or “highest rating.”
+3. **User Notifications**:
+   - Let users know when someone comments on or votes on their reviews.
+4. **Categories/Tags**:
+   - Let products be categorized or tagged to help discover similar items.
+5. **Social Sharing**:
+   - Users can share links to reviews on external platforms.
+
+---
+
+## Conclusion
+This set of rules ensures the MVP for “review.io” remains minimal, usable, and visually clean while focusing on the core user goals: posting trustworthy reviews, voting, and commenting. Avoid unnecessary flourishes, keep performance high, and implement only the essential features to validate the core idea. Once the concept proves itself, additional layers and functionalities can be explored.
+
+**End of cursor rules.txt**

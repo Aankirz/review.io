@@ -1,0 +1,53 @@
+import { User } from "./types";
+
+export const users: User[] = [
+  {
+    id: "user-1",
+    name: "Alex Johnson",
+    username: "alexj",
+    email: "alex@example.com",
+    avatar: "https://ui-avatars.com/api/?name=AJ&background=random",
+    bio: "Tech enthusiast and gadget reviewer. I believe in honest opinions and detailed reviews.",
+    createdAt: "2023-01-15T08:00:00Z",
+    karma: 1250,
+  },
+  {
+    id: "user-2",
+    name: "Sophia Chen",
+    username: "sophia_c",
+    email: "sophia@example.com",
+    avatar: "https://ui-avatars.com/api/?name=SC&background=random",
+    bio: "Product designer with a keen eye for quality and usability.",
+    createdAt: "2023-02-20T10:15:00Z",
+    karma: 980,
+  },
+  {
+    id: "user-3",
+    name: "Marcus Williams",
+    username: "mwilliams",
+    email: "marcus@example.com",
+    avatar: "https://ui-avatars.com/api/?name=MW&background=random",
+    bio: "Consumer advocate and researcher. I test products thoroughly before reviewing.",
+    createdAt: "2023-03-05T14:30:00Z",
+    karma: 1540,
+  },
+  {
+    id: "user-4",
+    name: "Priya Patel",
+    username: "priya_pat",
+    email: "priya@example.com",
+    avatar: "https://ui-avatars.com/api/?name=PP&background=random",
+    createdAt: "2023-04-10T09:45:00Z",
+    karma: 620,
+  },
+  {
+    id: "user-5",
+    name: "David Kim",
+    username: "dkim",
+    email: "david@example.com",
+    avatar: "https://ui-avatars.com/api/?name=DK&background=random",
+    bio: "Software engineer and tech reviewer. I focus on performance and value.",
+    createdAt: "2023-05-18T11:20:00Z",
+    karma: 890,
+  },
+]; 
