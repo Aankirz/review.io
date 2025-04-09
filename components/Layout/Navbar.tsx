@@ -3,6 +3,11 @@ import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Home, Search, Bell, Menu, LogIn } from "lucide-react";
 import { users } from "@/utils/mockData";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export function Navbar() {
   // For demo purposes, use the first user as the current user
@@ -37,11 +42,23 @@ export function Navbar() {
           <div className="flex items-center space-x-2">
             {isLoggedIn ? (
               <>
-                <Button variant="ghost" size="icon" className="relative">
-                  <Bell className="h-5 w-5" />
-                  <span className="absolute top-0 right-0 h-2 w-2 rounded-full bg-primary"></span>
-                </Button>
-                <Link href="/profile/1">
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="ghost" size="icon" className="relative">
+                      <Bell className="h-5 w-5" />
+                      <span className="absolute top-0 right-0 h-2 w-2 rounded-full bg-primary"></span>
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end" className="w-80">
+                    <div className="flex flex-col py-4 px-2">
+                      <h3 className="font-medium px-2 mb-2">Notifications</h3>
+                      <div className="flex items-center justify-center py-6 text-sm text-muted-foreground">
+                        No messages
+                      </div>
+                    </div>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+                <Link href={`/profile/${currentUser.id}`}>
                   <Avatar className="h-8 w-8 border hover:ring-2 hover:ring-primary/20 transition-all">
                     <AvatarImage src={currentUser.avatar} alt={currentUser.name} />
                     <AvatarFallback className="bg-primary/10 text-primary font-medium">{currentUser.name.charAt(0)}</AvatarFallback>

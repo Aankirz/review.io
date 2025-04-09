@@ -42,14 +42,14 @@ export function ProfilePageClient({ userId }: ProfilePageClientProps) {
               <Card className="overflow-hidden">
                 <div className="h-24 bg-gradient-to-r from-primary to-primary/60"></div>
                 <div className="px-6 pb-6 relative">
-                  <div className="absolute -top-10 left-6 ring-4 ring-background rounded-full overflow-hidden">
+                  <div className="absolute -top-28 left-6 ring-4 ring-background rounded-full overflow-hidden bg-background p-0">
                     <img 
                       src={user.avatar} 
                       alt={user.name} 
-                      className="w-20 h-20 object-cover" 
+                      className="w-24 h-24 object-cover" 
                     />
                   </div>
-                  <div className="mt-12 space-y-4">
+                  <div className="mt-14 space-y-4">
                     <div className="flex justify-between items-start">
                       <div>
                         <h1 className="text-2xl font-bold">{user.name}</h1>
